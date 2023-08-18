@@ -3,11 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testngscripts.googlepagetest">
+      <class name="parallelScripts.googlepagetest">
         <methods>
-          <include name="searchJavaTest"/>
+          <include name="finishExtent"/>
+          <include name="tearDown"/>
+          <include name="searchJavaTestOne"/>
+          <include name="setupExtent"/>
         </methods>
-      </class> <!-- testngscripts.googlepagetest -->
+      </class> <!-- parallelScripts.googlepagetest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

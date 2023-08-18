@@ -1,4 +1,4 @@
-package testngscripts;
+package parallelScripts;
 
 import java.time.Duration;
 
@@ -24,6 +24,8 @@ public class SamoleOneTest {
 		WebElement srcBox=driver.findElement(By.className("gLFyf"));
 		srcBox.sendKeys("Cypress Tutorial");  
 		srcBox.sendKeys((Keys.ENTER));
+		long id= Thread.currentThread().getId();
+		System.out.println("This test is running" + id);
 		System.out.println("Page Title-" + driver.getTitle());
 		Assert.assertEquals(driver.getTitle(), "Cypress Tutorial - Google Search");
 	driver.close();
