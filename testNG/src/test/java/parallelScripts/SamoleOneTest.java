@@ -10,8 +10,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import testngscripts.RetryAnalyser;
+
 public class SamoleOneTest {
-  @Test
+  @Test(retryAnalyzer = RetryAnalyser.class) //used RetryAnalyser class
   public void searchCypressTest() {
 	  WebDriver driver=new ChromeDriver();	
 		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(2000));
@@ -27,7 +29,7 @@ public class SamoleOneTest {
 		long id= Thread.currentThread().getId();
 		System.out.println("This test is running" + id);
 		System.out.println("Page Title-" + driver.getTitle());
-		Assert.assertEquals(driver.getTitle(), "Cypress Tutorial - Google Search");
+		Assert.assertEquals(driver.getTitle(), "Cypress Tutorial - Google Search Page");
 	driver.close();
   }
 }
